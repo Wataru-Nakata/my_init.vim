@@ -82,6 +82,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/wataru/.local/share/nvim/site/pack/packer/opt/completion-nvim"
   },
+  ["deoplete-jedi"] = {
+    loaded = true,
+    path = "/home/wataru/.local/share/nvim/site/pack/packer/start/deoplete-jedi"
+  },
   firenvim = {
     loaded = true,
     path = "/home/wataru/.local/share/nvim/site/pack/packer/start/firenvim"
@@ -91,11 +95,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wataru/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/home/wataru/.local/share/nvim/site/pack/packer/start/gruvbox"
+  },
   ["markdown-preview.nvim"] = {
     commands = { "MarkdownPreview" },
     loaded = false,
     needs_bufread = false,
     path = "/home/wataru/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim"
+  },
+  nerdtree = {
+    loaded = true,
+    path = "/home/wataru/.local/share/nvim/site/pack/packer/start/nerdtree"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -109,9 +121,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wataru/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
+  ["vim-airline"] = {
+    loaded = true,
+    path = "/home/wataru/.local/share/nvim/site/pack/packer/start/vim-airline"
+  },
+  ["vim-airline-themes"] = {
+    loaded = true,
+    path = "/home/wataru/.local/share/nvim/site/pack/packer/start/vim-airline-themes"
+  },
   ["vim-closer"] = {
     loaded = true,
     path = "/home/wataru/.local/share/nvim/site/pack/packer/start/vim-closer"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/wataru/.local/share/nvim/site/pack/packer/start/vim-devicons"
   },
   ["vim-dispatch"] = {
     commands = { "Dispatch", "Make", "Focus", "Start" },
@@ -124,6 +148,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = true,
     path = "/home/wataru/.local/share/nvim/site/pack/packer/opt/vim-matchup"
+  },
+  ["vim-virtualenv"] = {
+    loaded = true,
+    path = "/home/wataru/.local/share/nvim/site/pack/packer/start/vim-virtualenv"
   },
   ["vim-vsnip"] = {
     load_after = {
@@ -141,6 +169,10 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/wataru/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ"
+  },
+  vimpyter = {
+    loaded = true,
+    path = "/home/wataru/.local/share/nvim/site/pack/packer/start/vimpyter"
   }
 }
 
@@ -152,12 +184,12 @@ time([[Config for gitsigns.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file MarkdownPreview lua require("packer.load")({'markdown-preview.nvim'}, { cmd = "MarkdownPreview", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Focus lua require("packer.load")({'vim-dispatch'}, { cmd = "Focus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Start lua require("packer.load")({'vim-dispatch'}, { cmd = "Start", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file ALEEnable lua require("packer.load")({'ale'}, { cmd = "ALEEnable", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Dispatch lua require("packer.load")({'vim-dispatch'}, { cmd = "Dispatch", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file ALEEnable lua require("packer.load")({'ale'}, { cmd = "ALEEnable", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Make lua require("packer.load")({'vim-dispatch'}, { cmd = "Make", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]

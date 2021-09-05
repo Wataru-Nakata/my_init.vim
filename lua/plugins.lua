@@ -37,6 +37,14 @@ return require('packer').startup(function()
   use 'szymonmaszke/vimpyter'
   use 'preservim/nerdtree'
   use 'morhetz/gruvbox'
+  use 'jmcantrell/vim-virtualenv'
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
+  use 'ryanoasis/vim-devicons'
+  use {
+	  'neoclide/coc.nvim', branch='release',
+  }
+  use 'tpope/vim-fugitive'
 
 
 
@@ -58,14 +66,7 @@ return require('packer').startup(function()
     config = function() require('gitsigns').setup() end
   }
 
-  use {
-  'glepnir/galaxyline.nvim',
-    branch = 'main',
-    -- your statusline
-    config = function() require'my_statusline' end,
-    -- some optional icons
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
+
 
     -- You can specify multiple plugins in a single call
   -- use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
