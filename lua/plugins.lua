@@ -45,9 +45,23 @@ return require('packer').startup(function()
 	  'neoclide/coc.nvim', branch='release',
   }
   use 'tpope/vim-fugitive'
+  use 'airblade/vim-gitgutter'
+  use 'yggdroot/indentline'
+  use 'frazrepo/vim-rainbow'
 
 
 
+  use {
+  "ahmedkhalf/jupyter-nvim",
+  run = ":UpdateRemotePlugins",
+  config = function()
+      require("jupyter-nvim").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      }
+    end
+  }
 
   -- Plugins can have post-install/update hooks
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
@@ -61,10 +75,6 @@ return require('packer').startup(function()
   -- Use specific branch, dependency and run lua file after load
 
   -- Use dependency and run lua function after load
-  use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
-  }
 
 
 
