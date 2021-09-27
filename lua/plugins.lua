@@ -48,6 +48,11 @@ return require('packer').startup(function()
   use 'airblade/vim-gitgutter'
   use 'yggdroot/indentline'
   use 'frazrepo/vim-rainbow'
+  use {
+  	'nvim-telescope/telescope.nvim',
+	requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
 
 
 

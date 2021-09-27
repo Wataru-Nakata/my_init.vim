@@ -7,4 +7,5 @@ vim.cmd([[
 	let g:python_host_prog= '/home/wataru/.nvim-env/bin/python'
 	set nu rnu
 	nmap <C-n> :NERDTreeToggle<CR>
+	let g:rainbow_active = 1
 ]])
