@@ -45,6 +45,11 @@ return require('packer').startup(function()
 	  'neoclide/coc.nvim', branch='release',
   }
   use 'tpope/vim-fugitive'
+  use {
+	  'nvim-telescope/telescope.nvim',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+
+  }
 
 
 
